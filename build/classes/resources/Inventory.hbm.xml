@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="bean.Inventory" table="inventory">
+<id name="InventoryId" column="InventoryId">
+<generator class="sequence">
+<param name="sequence">i_seq</param>
+</generator>
+</id>
+<property name="setTopBox" column="setTopBox">
+</property>
+<property name="serialNumber" column="serialNumber"></property>
+<property name="macId" column="macId"></property>
+<property name="controlId" column="controlId"></property>
+<property name="dishId" column="dishId"></property>
+<property name="status" column="status"></property>
+<many-to-one name="retailer" class="bean.Retailer" column="retailerId" ></many-to-one>
+</class>
+</hibernate-mapping>

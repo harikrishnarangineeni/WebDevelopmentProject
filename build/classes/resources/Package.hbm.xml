@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+<class name="bean.Package" table="Package_G">
+<id name="packageId" column="packageId">
+<generator class="assigned">
+</generator></id>
+<property name="packageName" column="packageName"></property>
+<set name="channel" table="package_channel_G" lazy="false" cascade="all">
+<key column="packageId"></key>
+<many-to-many column="channelId" class="bean.Channel"></many-to-many>
+</set>
+ </class></hibernate-mapping>

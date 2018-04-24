@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ <class name="bean.Customer" table="customer">
+ <id name="custId" column="custId">
+ <generator class="sequence" >
+ <param name="sequence">
+ custa_seq
+ </param>
+</generator>
+</id>
+<property name="cust_Name" column="cust_Name">
+</property>
+<property name="operator" column="operator"></property>
+<many-to-one name="retailer" class="bean.Retailer" column="retailerId" unique="true" not-null="true" cascade="save-update" ></many-to-one>
+
+</class>
+</hibernate-mapping>

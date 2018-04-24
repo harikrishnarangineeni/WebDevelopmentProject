@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+<class name="bean.Customer_Bill" table="Bil">
+<id name="Id" column="Id">
+<generator class="sequence">
+<param name="sequence">pp</param>
+</generator>
+</id>
+<property name="customerName" column="customerName"></property>
+<property name="chargingType" column="chargingType"></property>
+<property name="date" column="cdate"></property>
+<property name="box" column="box"></property>
+
+<property name="currentBalance" column="currentBalance"></property>
+<property name="deductedBalance" column="deductedBalance"></property>
+
+<map name="packlist" table="packlist" lazy="false" cascade="all" >
+<key column="Id"></key>
+<index column="PackageName" type="string"></index>
+<element column="Cost" type="double"></element>
+</map>
+
+</class>
+</hibernate-mapping>

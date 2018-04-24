@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class  name="bean.Setup" table="setup">
+<id name="setupId" column="setupId">
+<generator class="sequence">
+<param name="sequence">seq</param>
+</generator>
+</id>
+<property name="Type" column="Type"></property>
+<set name="Features">
+<key  column="setupId"></key>
+<element column="Features" type="string"></element>
+</set>
+<property name="Height" column="Height"></property>
+<property  name="Width" column="Width"></property>
+<property name="Length"  column="Length"></property>
+<property name="Price" column="Price"></property>
+<property name="Installation_Charge" column="Installation_Charge"></property>
+<property name="Upgradtion_Charge" column="Upgradtion_Charge"></property>
+<property name="Discount" column="Discount"></property>
+<property name="Billing_Type" column="Billing_Type"></property>
+<property name="Refundable_Deposit_Amount" column="Refundable_Deposit_Amount"></property>
+</class>
+</hibernate-mapping>

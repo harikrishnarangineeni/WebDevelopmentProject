@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+<class name="bean.STBPackage" table="STBPackage_G">
+<id name="sno" column="serialNo">
+<generator class="assigned"/>
+</id>
+<property name="packageName" column="packageName"></property>
+<many-to-one name="setup" column="Type"  lazy="false" class="bean.Setup" cascade="all"></many-to-one>
+<many-to-one name="pac" column="packageId"  lazy="false"  class="bean.Package"></many-to-one>
+</class></hibernate-mapping>             

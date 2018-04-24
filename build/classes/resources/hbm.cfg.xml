@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+<session-factory>
+ 
+<!-- Related to the connection START -->
+<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver
+</property>
+<property name="connection.url">jdbc:oracle:thin:@intvmoradb04:1521:ORAJAVADB</property>
+<property name="connection.user">TVM1617_Tvm59_TJA392_DEV</property>
+<property name="connection.password">tcstvm59</property>
+<!-- Related to the connection END -->
+ 
+<!-- Related to hibernate properties START -->
+<property name="show_sql">true</property>
+<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+<property name="hbm2ddl.auto">update</property>
+<!-- Related to hibernate properties END -->
+ 
+<!-- Related to mapping START -->
+<mapping resource="resources/Customer.hbm.xml" />
+<mapping resource="resources/Retailer.hbm.xml" />
+<mapping resource="resources/Inventory.hbm.xml" />
+<mapping resource="resources/Setup.hbm.xml" />
+<mapping resource="resources/User.hbm.xml" />
+<mapping resource="resources/Package.hbm.xml" />
+<mapping resource="resources/Channel.hbm.xml" />
+<mapping resource="resources/STBPackage.hbm.xml" />
+<mapping resource="resources/Customer_Bill.hbm.xml" />
+<mapping resource="resources/datecol.hbm.xml" />
+<mapping resource="resources/Dateprepaid.hbm.xml" />
+<!-- Related to the mapping END -->
+ 
+</session-factory>
+</hibernate-configuration>

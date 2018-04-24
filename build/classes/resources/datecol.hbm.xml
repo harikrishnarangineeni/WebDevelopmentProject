@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+<class name="bean.datecol" table="Bil_datecol">
+<id name="curdate" column="curdate">
+<generator class="assigned"></generator>
+
+</id>
+<property name="Id" column="Id">
+
+</property>
+<property name="customerName" column="customerName"></property>
+<property name="chargingType" column="chargingType"></property>
+<property name="date" column="cdate"></property>
+<property name="box" column="box"></property>
+
+<property name="currentBalance" column="currentBalance"></property>
+<property name="deductedBalance" column="deductedBalance"></property>
+
+<map name="packlist" table="packlist1" lazy="false" cascade="all" >
+<key column="Id"></key>
+<index column="PackageName" type="string"></index>
+<element column="Cost" type="double"></element>
+</map>
+
+</class>
+</hibernate-mapping>
